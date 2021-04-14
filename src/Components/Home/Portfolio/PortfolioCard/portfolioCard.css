@@ -1,0 +1,9 @@
+.portfolio-card {
+    margin-bottom: 1.5rem;
+
+}
+
+.portfolio-card h5 {
+    border-bottom: 1px solid #e4dcad;
+    padding: 1rem 0;
+}

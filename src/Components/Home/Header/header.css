@@ -1,0 +1,17 @@
+.header {
+    background-image: linear-gradient(to right, #18181050, #181810b6), url("../../../images/header\ \(6\).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 7.5rem;
+}
+
+.header div {
+    margin-left: 8rem;
+}
+
+.header h1 {
+    font-weight: 700;
+    font-size: 4.25rem;
+}
