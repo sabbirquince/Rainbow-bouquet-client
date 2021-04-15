@@ -11,6 +11,7 @@ import {
   faClipboardList,
   faTags,
 } from "@fortawesome/free-solid-svg-icons";
+import ManageServices from "./ManageServices/ManageServices";
 
 const Admin = () => {
   let { path, url } = useRouteMatch();
@@ -47,7 +48,9 @@ const Admin = () => {
 
       <div className="right">
         <Switch>
-          <Route exact path={path}></Route>
+          <Route exact path={path}>
+            <ManageServices />
+          </Route>
 
           <Route path={`${path}/addService`}>
             <AddService />
@@ -61,7 +64,9 @@ const Admin = () => {
             <MakeAdmin />
           </Route>
 
-          <Route path={`${path}/manageServices`}></Route>
+          <Route path={`${path}/manageServices`}>
+            <ManageServices />
+          </Route>
         </Switch>
       </div>
     </div>

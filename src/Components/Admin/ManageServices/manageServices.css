@@ -1,0 +1,6 @@
+.ms-head {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e4dcad;
+}

@@ -5,7 +5,14 @@ import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import defaultImg from "../../../../icons/photograph.png";
 
 const ServicesCard = ({ service }) => {
-  const { title, description1, description2, description3, imgUrl } = service;
+  const {
+    title,
+    description1,
+    description2,
+    description3,
+    imgUrl,
+    price,
+  } = service;
 
   return (
     <div className="service-card mb-4">
@@ -24,9 +31,7 @@ const ServicesCard = ({ service }) => {
         <p className="service-text">{description1}</p>
         <p className="service-text">{description2 || "..."}</p>
         <p className="service-text">{description3 || "..."}</p>
-        {title === "One Day Plan" && <h5>$249</h5>}
-        {title === "Two Day Plan" && <h5>$339</h5>}
-        {title === "Up to week Plan" && <h5>$599</h5>}
+        <h4>${price}</h4>
       </div>
 
       <div className="service-bottom">

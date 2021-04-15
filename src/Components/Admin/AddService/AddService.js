@@ -114,13 +114,24 @@ const AddService = () => {
             {errors.exampleRequired && <span>This field is required</span>}
           </div>
 
+          <div className="mb-3">
+            <label htmlFor="" className="form-label">
+              Price
+            </label>
+            <input
+              className="form-control shadow pr-4"
+              placeholder="price"
+              {...register("price")}
+            />
+          </div>
+
           {imgUrl ? (
             <input
-              className="btn btn-warning align-self-stretch mb-3"
+              className="btn btn-warning align-self-stretch mt-3 mb-3"
               type="submit"
             />
           ) : (
-            <button className="btn my-dis-btn align-self-stretch mb-3">
+            <button className="btn my-dis-btn align-self-stretch mt-3 mb-3">
               submit
             </button>
           )}

@@ -14,7 +14,7 @@ import Admin from "./Components/Admin/Admin";
 export const LoginContext = createContext();
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState();
+  const [loggedIn, setLoggedIn] = useState({ email: "juke.sabbir@gmail.com" });
 
   return (
     <div className="app">

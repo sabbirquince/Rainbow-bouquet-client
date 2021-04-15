@@ -1,0 +1,20 @@
+.ms-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.ms-card h6:first-child {
+    flex: 0 0 45%;
+}
+
+.ms-card h6:nth-child(2) {
+    flex: 0 0 20%;
+    padding-left: 1.65rem;
+}
+
+.ms-card h6:last-child {
+    flex: 1;
+    text-align: end;
+    font-size: 1.25rem;
+}
