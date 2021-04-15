@@ -1,26 +1,32 @@
 import React from "react";
 import "./servicesCard.css";
-import camera from "../../../../icons/photograph.png";
-import camera2 from "../../../../icons/camera-operator (1).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
+import defaultImg from "../../../../icons/photograph.png";
 
-const ServicesCard = () => {
+const ServicesCard = ({ service }) => {
+  const { title, description1, description2, description3, imgUrl } = service;
+
   return (
     <div className="service-card mb-4">
       <div className="d-flex">
-        <img className="img-fluid service-img" src={camera2} alt="" />
+        <img
+          className="img-fluid service-img"
+          src={imgUrl || defaultImg}
+          alt=""
+        />
         <h4 className="align-self-center text-right service-head">
           Click to get service
         </h4>
       </div>
-      <h5 className="py-3 service-head-sec">One day plan</h5>
+      <h5 className="py-3 service-head-sec">{title}</h5>
       <div className="service-top">
-        <p className="service-text">Full event coverage</p>
-        <p className="service-text">Portrait for members</p>
-        <p className="service-text">Event documentary</p>
-        <p className="service-text">Distinct area photoshoot</p>
-        <h5>$205</h5>
+        <p className="service-text">{description1}</p>
+        <p className="service-text">{description2 || "..."}</p>
+        <p className="service-text">{description3 || "..."}</p>
+        {title === "One Day Plan" && <h5>$249</h5>}
+        {title === "Two Day Plan" && <h5>$339</h5>}
+        {title === "Up to week Plan" && <h5>$599</h5>}
       </div>
 
       <div className="service-bottom">

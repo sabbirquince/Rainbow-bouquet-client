@@ -1,0 +1,46 @@
+.admin {
+    min-height: 100vh;
+    display: flex;
+    padding-top: 6rem;
+}
+
+.admin-main-head {
+    background-color: #062121;
+    margin-bottom: 0;
+    padding: 1.155rem 5.15rem;
+}
+
+.left {
+    background-color: #181810;
+    flex: 0 0 20%;
+
+}
+
+.right {
+    flex: 1;
+    background-color: #01010138;
+    height: 100vh;
+}
+
+.left-bar {
+    text-decoration: none;
+}
+
+.left-bar li {
+    list-style: none;
+}
+
+.left-bar li a {
+    display: block;
+    padding: 1.5rem 0rem 1.5rem 3.75rem;
+}
+
+.left-bar li a:hover {
+    background-color: #131111a9;
+}
+
+.admin-head {
+    background-color: #062121;
+    padding: 1.155rem;
+    padding-left: 4rem;
+}

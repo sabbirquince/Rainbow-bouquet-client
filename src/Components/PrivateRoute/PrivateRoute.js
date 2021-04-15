@@ -1,6 +1,6 @@
 import React from "react";
 import { useContext } from "react";
-import { Redirect, Route, useAuth } from "react-router-dom";
+import { Redirect, Route } from "react-router-dom";
 import { LoginContext } from "../../App";
 
 function PrivateRoute({ children, ...rest }) {

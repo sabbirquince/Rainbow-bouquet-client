@@ -1,0 +1,15 @@
+.addService {}
+
+.addService-form {
+    padding: 2rem 4rem;
+}
+
+.addService-form section {
+    flex: 1;
+}
+
+.my-dis-btn {
+    border: 1px solid rgba(128, 128, 128, 0.158);
+    color: rgba(211, 211, 211, 0.075);
+    cursor: none;
+}

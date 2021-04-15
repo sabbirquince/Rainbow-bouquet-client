@@ -1,0 +1,27 @@
+.login {
+    min-height: 100vh;
+    background-image: linear-gradient(to right, #1818107c, #1818107c), url('../../images/header5.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 5rem;
+}
+
+.login div {
+    background-color: #181810bb;
+    width: 32%;
+    height: 25rem;
+    padding: 2.5rem;
+    margin-top: 5rem;
+    margin-left: 7.5rem;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+
+}

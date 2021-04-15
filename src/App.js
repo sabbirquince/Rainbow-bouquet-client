@@ -9,6 +9,7 @@ import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
 import { createContext } from "react";
 import { useState } from "react";
 import User from "./Components/User/User";
+import Admin from "./Components/Admin/Admin";
 
 export const LoginContext = createContext();
 
@@ -38,6 +39,10 @@ function App() {
 
             <PrivateRoute path="/user">
               <User />
+            </PrivateRoute>
+
+            <PrivateRoute path="/admin">
+              <Admin />
             </PrivateRoute>
           </Switch>
 
