@@ -1,0 +1,12 @@
+.testimonial-card {
+    box-shadow: 0 7px 12px rgba(0, 0, 0, .4);
+}
+
+.testimonial-card p {
+    margin-bottom: 0;
+}
+
+.test-img {
+    height: 4rem;
+    border-radius: 50px;
+}

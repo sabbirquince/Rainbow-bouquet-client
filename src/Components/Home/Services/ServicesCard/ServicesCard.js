@@ -24,7 +24,6 @@ const ServicesCard = () => {
       </div>
 
       <div className="service-bottom">
-        <h3>See details</h3>
         <FontAwesomeIcon className="service-icon" icon={faLongArrowAltRight} />
       </div>
     </div>

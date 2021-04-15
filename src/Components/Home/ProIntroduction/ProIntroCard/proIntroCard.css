@@ -1,0 +1,10 @@
+.pro-intro-card {
+    background-color: #181810;
+    height: 11.8rem;
+    box-shadow: 0 7px 12px rgba(0, 0, 0, .4);
+}
+
+.pro-intro-img {
+    height: 11.7rem;
+    object-fit: cover;
+}

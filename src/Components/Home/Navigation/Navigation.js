@@ -18,8 +18,8 @@ const Navigation = () => {
           <Link className="p-2 px-4 my-cl-sec" to="/portfolio">
             Portfolio
           </Link>
-          <Link className="p-2 px-4 my-cl-sec" to="/contact">
-            Contact Us
+          <Link className="p-2 px-4 my-cl-sec" to="/user">
+            User
           </Link>
           <Link className="p-2 px-4 my-cl-sec" to="/admin">
             Admin

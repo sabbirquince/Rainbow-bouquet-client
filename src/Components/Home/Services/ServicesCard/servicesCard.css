@@ -20,8 +20,8 @@
 }
 
 .service-card:hover {
-    background-color: #ffd56bbe;
-    color: #181810;
+    background-color: #062121;
+    /* color: #181810; */
 }
 
 .service-card:hover .service-img {
@@ -37,7 +37,7 @@
 }
 
 .service-card:hover .service-head-sec {
-    transform: translateX(2.5rem) translateY(1.5rem) scale(1.3);
+    transform: translateX(3.5rem) translateY(10.35rem) scale(1.3);
     font-weight: 700;
 }
 
@@ -72,4 +72,5 @@
 
 .service-card:hover .service-icon {
     transform: translateX(15rem);
+    color: #ffd56bc7;
 }
