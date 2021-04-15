@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import "./services.css";
 import ServicesCard from "./ServicesCard/ServicesCard";
@@ -6,9 +7,11 @@ import ServicesCard from "./ServicesCard/ServicesCard";
 const Services = () => {
   const [services, setServices] = useState([]);
 
-  fetch("https://mighty-tundra-68939.herokuapp.com/services")
-    .then((response) => response.json())
-    .then((data) => setServices(data));
+  useEffect(() => {
+    fetch("https://mighty-tundra-68939.herokuapp.com/services")
+      .then((response) => response.json())
+      .then((data) => setServices(data));
+  }, []);
 
   return (
     <div className="my-container py-4 services">

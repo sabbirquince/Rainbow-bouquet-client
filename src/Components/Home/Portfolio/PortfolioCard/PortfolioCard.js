@@ -1,15 +1,18 @@
 import React from "react";
-import portfolioImg from "../../../../images/header8.jpg";
 import "./portfolioCard.css";
 
-const PortfolioCard = () => {
+const PortfolioCard = ({ portfolio, index }) => {
+  const { image, title, type, date } = portfolio;
+
   return (
     <div className="portfolio-card">
-      <p className="text-right">1</p>
-      <img className="img-fluid" src={portfolioImg} alt="" />
-      <h5>REMIAN Reunion</h5>
-      <p>Reuinion</p>
-      <small>27 March, 2021</small>
+      <p className="text-right">{index + 1}</p>
+      <div className="port-img-box">
+        <img className="img-fluid port-img" src={image} alt="" />
+      </div>
+      <h5>{title}</h5>
+      <p>{type}</p>
+      <small>{date}</small>
     </div>
   );
 };

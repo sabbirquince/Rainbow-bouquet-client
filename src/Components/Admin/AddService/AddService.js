@@ -26,7 +26,12 @@ const AddService = () => {
       body: JSON.stringify(allInfo),
     })
       .then((res) => res.json())
-      .then((data) => setSubmitted(data));
+      .then((data) => {
+        setSubmitted(data);
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      });
   };
 
   const handleImgUpload = (event) => {

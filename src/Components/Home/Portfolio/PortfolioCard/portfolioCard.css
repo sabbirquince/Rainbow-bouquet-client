@@ -1,6 +1,19 @@
 .portfolio-card {
     margin-bottom: 1.5rem;
+    overflow: hidden;
+}
 
+.port-img-box {
+    overflow: hidden;
+}
+
+.port-img {
+    transition: all .25s;
+    overflow: hidden;
+}
+
+.portfolio-card:hover .port-img {
+    transform: scale(1.15);
 }
 
 .portfolio-card h5 {
