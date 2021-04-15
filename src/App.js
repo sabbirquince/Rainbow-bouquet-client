@@ -10,11 +10,16 @@ import { createContext } from "react";
 import { useState } from "react";
 import User from "./Components/User/User";
 import Admin from "./Components/Admin/Admin";
+import AdminRestricted from "./Components/Admin/AdminRestricted/AdminRestricted";
+import AdminRoute from "./Components/Admin/AdminRoute/AdminRoute";
 
 export const LoginContext = createContext();
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState({ email: "juke.sabbir@gmail.com" });
+  const [loggedIn, setLoggedIn] = useState({
+    email: "juke.sabbir@gmail.com",
+    role: "admin",
+  });
 
   return (
     <div className="app">
@@ -41,9 +46,13 @@ function App() {
               <User />
             </PrivateRoute>
 
-            <PrivateRoute path="/admin">
+            <AdminRoute path="/admin">
               <Admin />
-            </PrivateRoute>
+            </AdminRoute>
+
+            <Route path="/adminRestricted">
+              <AdminRestricted />
+            </Route>
           </Switch>
 
           <Footer />

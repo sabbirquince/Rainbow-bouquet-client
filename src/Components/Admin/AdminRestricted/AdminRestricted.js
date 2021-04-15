@@ -1,13 +1,11 @@
 import React from "react";
 import { useContext } from "react";
-import { useHistory, useLocation } from "react-router-dom";
-import { LoginContext } from "../../App";
-import { signInWithGoogle } from "./FirebaseAuth";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGoogle } from "@fortawesome/free-brands-svg-icons";
-import "./login.css";
+import { useHistory, useLocation } from "react-router";
+import { LoginContext } from "../../../App";
+import { signInWithGoogle } from "../../Login/FirebaseAuth";
+import "./adminRestricted.css";
 
-const Login = () => {
+const AdminRestricted = () => {
   const [loggedIn, setLoggedIn] = useContext(LoginContext);
 
   let history = useHistory();
@@ -43,19 +41,22 @@ const Login = () => {
   };
 
   return (
-    <div className=" login">
-      <div>
-        <h1>Login</h1>
-        <button
-          onClick={handleGoogleSignIn}
-          className="btn btn-warning py-2 px-5 mt-3"
-        >
-          <FontAwesomeIcon icon={faGoogle} /> continue with google
-        </button>
-        <small className="py-3">You must login to get our services</small>
-      </div>
+    <div className="admin-restrict">
+      <h3 className="mb-3">
+        Warning: You have to be an admin to view this page!
+      </h3>
+      <button
+        onClick={handleGoogleSignIn}
+        className="btn btn-outline-warning px-5"
+      >
+        Login
+      </button>
+      <p className="mt-3">
+        You may not see afterwards yet after login if you are not enlisted as an
+        admin of this website
+      </p>
     </div>
   );
 };
 
-export default Login;
+export default AdminRestricted;
