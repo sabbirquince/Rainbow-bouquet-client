@@ -20,10 +20,10 @@ const Services = () => {
         Choose from <br /> variety of plans
       </h2>
 
-      <div className="py-5 ">
+      <div className="py-3 py-md-5">
         <div className="row g-2">
           {services.map((each, index) => (
-            <div className="col-4">
+            <div className="col-12 col-sm-6 col-lg-4">
               <ServicesCard service={each} key={index} />
             </div>
           ))}

@@ -22,3 +22,33 @@
 .my-container {
   padding: 0 11.15rem;
 }
+
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 90%;
+  }
+
+  .my-container {
+    padding: 0 4rem;
+  }
+}
+
+@media only screen and (max-width: 990px) {
+  html {
+    font-size: 85%;
+  }
+
+  .my-container {
+    padding: 0 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 776px) {
+  html {
+    font-size: 78%;
+  }
+
+  .my-container {
+    padding: 0 1.5rem;
+  }
+}

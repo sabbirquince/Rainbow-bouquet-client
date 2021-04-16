@@ -18,16 +18,20 @@ const Footer = () => {
 
       <div>
         <h5>Company</h5>
-        <p>About</p>
-        <p>Projects</p>
-        <p>Terms & Condition</p>
+        <div className="res-links">
+          <p>About</p>
+          <p>Projects</p>
+          <p>Terms & Condition</p>
+        </div>
       </div>
 
       <div>
         <h5>Links</h5>
-        <p>Contact</p>
-        <p>Services</p>
-        <p>Our blog</p>
+        <div className="res-links">
+          <p>Contact</p>
+          <p>Services</p>
+          <p>Our blog</p>
+        </div>
       </div>
 
       <div>

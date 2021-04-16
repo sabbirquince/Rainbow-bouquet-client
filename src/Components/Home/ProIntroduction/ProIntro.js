@@ -10,17 +10,17 @@ const ProIntro = () => {
         Meet our frontline <br /> Professionals
       </h2>
 
-      <div className="row g-2 my-5">
-        <div className="col-6">
+      <div className="row g-2 my-3 my-md-5">
+        <div className="col-12 col-sm-6">
           <ProIntroCard />
         </div>
-        <div className="col-6">
+        <div className="col-12 col-sm-6">
           <ProIntroCard />
         </div>
-        <div className="col-6">
+        <div className="col-12 col-sm-6">
           <ProIntroCard />
         </div>
-        <div className="col-6">
+        <div className="col-12 col-sm-6">
           <ProIntroCard />
         </div>
       </div>

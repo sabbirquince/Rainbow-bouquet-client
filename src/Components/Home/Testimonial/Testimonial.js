@@ -21,7 +21,7 @@ const Testimonial = () => {
       <div>
         <div className="row g-2">
           {reviews.map((each, index) => (
-            <div key={index} className="col-4">
+            <div key={index} className="col-12 col-sm-6 col-md-4">
               <TestimonialCard reviewInfo={each} />
             </div>
           ))}

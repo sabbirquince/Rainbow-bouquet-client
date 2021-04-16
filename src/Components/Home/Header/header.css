@@ -15,3 +15,33 @@
     font-weight: 700;
     font-size: 4.25rem;
 }
+
+@media only screen and (max-width: 990px) {
+    .header {
+        padding-top: 4rem;
+        min-height: 85vh;
+    }
+
+    .header div {
+        margin-left: 3rem;
+    }
+
+    .header h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media only screen and (max-width: 776px) {
+    .header {
+        min-height: 57.5vh;
+    }
+
+    .header h1 {
+        font-size: 3rem;
+    }
+
+    .header div {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

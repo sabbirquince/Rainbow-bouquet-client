@@ -36,10 +36,10 @@ const Portfolio = () => {
         </h2>
       </div>
 
-      <div className="py-5">
+      <div className="py-3 py-md-5">
         <div className="row g-2">
           {portfolio.map((each, index) => (
-            <div className="col-4">
+            <div className="col-12 col-sm-6 col-md-4">
               <PortfolioCard portfolio={each} index={index} key={index} />
             </div>
           ))}

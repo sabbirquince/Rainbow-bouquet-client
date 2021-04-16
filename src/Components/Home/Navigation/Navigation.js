@@ -5,13 +5,13 @@ import "./navigation.css";
 
 const Navigation = () => {
   return (
-    <Navbar fixed="top" className="my-nav" expand="lg">
+    <Navbar fixed="top" variant="dark" className="my-nav" expand="lg">
       <Navbar.Brand className="my-cl-sec" href="/">
         Rainbow Bouquet
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="ml-auto">
+        <Nav className="ml-auto mt-2 mt-md-0">
           <Link className="p-2 px-4 my-cl-sec" to="/home">
             Home
           </Link>

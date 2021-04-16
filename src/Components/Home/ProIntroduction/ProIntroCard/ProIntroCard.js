@@ -4,9 +4,9 @@ import pro from "../../../../images/review(3).jpg";
 
 const ProIntroCard = () => {
   return (
-    <div className="card pro-intro-card mb-3" style={{ maxWidth: "540px" }}>
+    <div className="card pro-intro-card mb-3">
       <div className="row no-gutters">
-        <div className="col-md-4">
+        <div className="col-md-4 pro-img-box">
           <img className="pro-intro-img img-fluid" src={pro} alt="..." />
         </div>
         <div className="col-md-8">

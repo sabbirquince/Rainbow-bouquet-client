@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { LoginContext } from "../../../App";
+import "./userReview.css";
 
 const UserReview = () => {
   const [loggedIn, setLoggedIn] = useContext(LoginContext);
@@ -30,7 +31,7 @@ const UserReview = () => {
     <div>
       <h3 className="admin-head">Your orders</h3>
 
-      <form className="p-2" onSubmit={handleSubmit(onSubmit)}>
+      <form className="p-2 user-review-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">
             Your name

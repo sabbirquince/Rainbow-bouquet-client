@@ -17,3 +17,33 @@
     font-size: 2rem;
     margin-right: 1rem;
 }
+
+@media only screen and (max-width: 990px) {
+    .footer {
+        padding: 5rem 4rem;
+    }
+}
+
+@media only screen and (max-width: 776px) {
+    .footer {
+        justify-content: space-between;
+        flex-direction: column;
+        height: 35rem;
+    }
+
+    .footer div:first-child {
+        border-bottom: 1px solid #e4dcad;
+        margin-bottom: 1rem;
+    }
+
+    .res-links {
+        display: flex;
+        margin: .5rem 0;
+        border-bottom: 1px solid #e4dcad;
+    }
+
+    .res-links p {
+        padding: 0 2rem 0 0
+    }
+
+}

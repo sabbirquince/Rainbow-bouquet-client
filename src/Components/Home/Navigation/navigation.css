@@ -2,3 +2,9 @@
     background-color: #181810;
     padding: 1.5rem 11.15rem;
 }
+
+@media only screen and (max-width:990px) {
+    .my-nav {
+        padding: 1.15rem 2rem;
+    }
+}
