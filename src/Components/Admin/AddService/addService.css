@@ -13,3 +13,10 @@
     color: rgba(211, 211, 211, 0.075);
     cursor: none;
 }
+
+@media only screen and (max-width: 990px) {
+    .addService-form {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+}

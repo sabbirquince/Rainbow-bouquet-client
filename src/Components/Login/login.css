@@ -23,5 +23,32 @@
     flex-direction: column;
     align-items: center;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
 
+@media only screen and (max-width: 1400px) {
+    .login div {
+        width: 50%;
+    }
+}
+
+@media only screen and (max-width: 990px) {
+    .login {
+        min-height: 70vh;
+        padding: 0 2rem;
+    }
+
+    .login div {
+        width: 50%;
+        margin: 5rem auto 1rem;
+    }
+}
+
+@media only screen and (max-width: 776px) {
+    .login {
+        padding: 0 .5rem;
+    }
+
+    .login div {
+        width: 90%;
+    }
 }

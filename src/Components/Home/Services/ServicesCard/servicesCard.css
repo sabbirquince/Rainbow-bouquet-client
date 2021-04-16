@@ -22,7 +22,6 @@
 
 .service-card:hover {
     background-color: #062121;
-    /* color: #181810; */
 }
 
 .service-card:hover .service-img {
@@ -74,4 +73,38 @@
 .service-card:hover .service-icon {
     transform: translateX(15rem);
     color: #ffd56bc7;
+}
+
+@media only screen and (max-width: 990px) {
+    .service-card:hover .service-img {
+        transform: translateX(0);
+    }
+
+    .service-card:hover .service-head {
+        transform: translateX(0);
+    }
+
+    .service-card:hover .service-head-sec {
+        transform: translateX(0) translateY(0) scale(1);
+    }
+
+    .service-card:hover .service-bottom {
+        visibility: hidden;
+    }
+
+    .service-card:hover .service-top {
+        opacity: 1;
+    }
+
+    .service-card:hover .service-icon {
+        transform: translateX(0);
+    }
+
+    .service-card:hover .service-text:not(:last-child) {
+        border-bottom: 1px solid #ffd56bc7;
+    }
+
+    .service-head {
+        padding-left: 4rem;
+    }
 }

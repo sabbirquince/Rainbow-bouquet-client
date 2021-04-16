@@ -15,7 +15,6 @@
 .left {
     background-color: #181810;
     flex: 0 0 20%;
-
 }
 
 .right {
@@ -46,4 +45,28 @@
     background-color: #062121;
     padding: 1.155rem;
     padding-left: 4rem;
+}
+
+@media only screen and (max-width: 990px) {
+
+    .admin,
+    .user {
+        flex-direction: column;
+        padding-top: 5.7rem;
+    }
+
+    .left {
+        flex: 0 0 12.5%;
+    }
+
+    .left-bar {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+    }
+
+    .left-bar li a {
+        display: block;
+        padding: 1.5rem;
+    }
 }

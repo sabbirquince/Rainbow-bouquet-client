@@ -10,3 +10,23 @@
     width: 50%;
     padding: 2.5rem 0;
 }
+
+@media only screen and (max-width: 990px) {
+    .book-form {
+        width: 70%;
+    }
+
+    .payment {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 776px) {
+    .book-form {
+        width: 100%;
+    }
+
+    .payment {
+        width: 100%;
+    }
+}
