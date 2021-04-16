@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./testimonial.css";
 import TestimonialCard from "./TestimonialCard/TestimonialCard";
 
 const Testimonial = () => {
+  const [reviews, setReviews] = useState([]);
+
+  useEffect(() => {
+    fetch("https://mighty-tundra-68939.herokuapp.com/reviews")
+      .then((res) => res.json())
+      .then((data) => setReviews(data));
+  }, []);
+
   return (
     <div className="my-container py-5">
       <p style={{ fontSize: "1.2rem" }}>Testimonials</p>
@@ -10,17 +18,13 @@ const Testimonial = () => {
         What our clients <br /> have to say
       </h2>
 
-      <div class="">
-        <div class="row g-2">
-          <div class="col-4">
-            <TestimonialCard />
-          </div>
-          <div class="col-4">
-            <TestimonialCard />
-          </div>
-          <div class="col-4">
-            <TestimonialCard />
-          </div>
+      <div>
+        <div className="row g-2">
+          {reviews.map((each, index) => (
+            <div key={index} className="col-4">
+              <TestimonialCard reviewInfo={each} />
+            </div>
+          ))}
         </div>
       </div>
     </div>

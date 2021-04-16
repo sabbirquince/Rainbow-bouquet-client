@@ -17,6 +17,7 @@ export const LoginContext = createContext();
 
 function App() {
   const [loggedIn, setLoggedIn] = useState({});
+  console.log(loggedIn);
 
   return (
     <div className="app">
