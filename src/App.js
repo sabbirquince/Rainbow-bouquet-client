@@ -16,10 +16,7 @@ import AdminRoute from "./Components/Admin/AdminRoute/AdminRoute";
 export const LoginContext = createContext();
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState({
-    email: "juke.sabbir@gmail.com",
-    role: "admin",
-  });
+  const [loggedIn, setLoggedIn] = useState({});
 
   return (
     <div className="app">

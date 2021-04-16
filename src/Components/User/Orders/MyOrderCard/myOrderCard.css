@@ -1,0 +1,22 @@
+.user-order-card {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .3);
+    background-color: #062121;
+    padding: 1rem;
+    border-radius: 2px;
+    margin-bottom: 1.15rem;
+    height: 16rem;
+}
+
+.uoc-img {
+    height: 4rem;
+}
+
+.uoc-status {
+    padding: .5rem;
+    align-self: flex-start;
+    border-radius: 2px;
+}
+
+.user-order-card p {
+    margin-bottom: 0;
+}

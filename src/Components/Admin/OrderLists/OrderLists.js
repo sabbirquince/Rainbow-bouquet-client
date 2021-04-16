@@ -4,12 +4,13 @@ import "./orderLists.css";
 
 const OrderLists = () => {
   const [orders, setOrders] = useState([]);
+  const [statChange, setStatChange] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:4060/orderLists")
+    fetch("https://mighty-tundra-68939.herokuapp.com/orderLists")
       .then((res) => res.json())
       .then((data) => setOrders(data));
-  }, []);
+  }, [statChange]);
 
   return (
     <div className="orderLists">
@@ -25,7 +26,12 @@ const OrderLists = () => {
 
       <div className="orderLists-items">
         {orders.map((each) => (
-          <OrderListCard order={each} />
+          <OrderListCard
+            order={each}
+            key={each._id}
+            statChange={statChange}
+            setStatChange={setStatChange}
+          />
         ))}
       </div>
     </div>

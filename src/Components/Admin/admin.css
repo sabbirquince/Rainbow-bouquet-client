@@ -20,7 +20,7 @@
 .right {
     flex: 1;
     background-color: #01010138;
-    height: 100vh;
+    min-height: 100vh;
     padding: 2rem;
 }
 

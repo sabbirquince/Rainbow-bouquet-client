@@ -13,6 +13,7 @@ const Book = () => {
   const [loggedIn, setLoggedIn] = useContext(LoginContext);
   const [booked, setBooked] = useState(false);
   const [loadService, setLoadService] = useState("");
+  console.log(loadService);
 
   let { id } = useParams();
 
@@ -30,16 +31,26 @@ const Book = () => {
   } = useForm();
 
   const [serviceInfo, setServiceInfo] = useState(null);
-  console.log(serviceInfo);
 
   const onSubmit = (data) => {
-    const allBookInfo = { ...data, service: loadService.title };
+    const allBookInfo = {
+      ...data,
+      service: loadService.title,
+      status: "Pending",
+      imgUrl: loadService.imgUrl,
+      price: loadService.price,
+      description: {
+        one: loadService.description1,
+        two: loadService.description2,
+        three: loadService.description3,
+      },
+    };
     setServiceInfo(allBookInfo);
   };
 
   return (
     <div className="book">
-      <h3 className="admin-head">Add service</h3>
+      <h3 className="admin-head">Book a service</h3>
 
       <form className="book-form px-2" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">
@@ -62,7 +73,6 @@ const Book = () => {
             placeholder="name@example.com"
             value={loggedIn?.email}
             className="form-control"
-            defaultValue={loggedIn?.email}
             {...register("email")}
           />
         </div>
@@ -78,7 +88,7 @@ const Book = () => {
               aria-label="select a service from homepage"
               value={loadService?.title}
               {...register("service", { required: true })}
-              readonly
+              readOnly
               disabled
             />
 
@@ -99,7 +109,7 @@ const Book = () => {
               aria-label="select a service from homepage"
               value={loadService?.title}
               {...register("service", { required: true })}
-              readonly
+              readOnly
             />
 
             {errors.service && (
@@ -138,12 +148,14 @@ const Book = () => {
         <StripePayment setBooked={setBooked} serviceInfo={serviceInfo} />
       </div>
 
-      {booked && (
-        <p className="text-warning mb-5 text-center">
-          Service is booked successfully. Be patient, we'll get back to you
-          soon.
-        </p>
-      )}
+      <div>
+        {booked && (
+          <p className="text-warning mb-5 pt-2 text-center">
+            Service is booked successfully. Be patient, we'll get back to you
+            soon.
+          </p>
+        )}
+      </div>
     </div>
   );
 };
