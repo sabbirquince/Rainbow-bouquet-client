@@ -3,6 +3,7 @@ import "./servicesCard.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLongArrowAltRight } from "@fortawesome/free-solid-svg-icons";
 import defaultImg from "../../../../icons/photograph.png";
+import { useHistory } from "react-router";
 
 const ServicesCard = ({ service }) => {
   const {
@@ -12,10 +13,16 @@ const ServicesCard = ({ service }) => {
     description3,
     imgUrl,
     price,
+    _id,
   } = service;
 
+  const history = useHistory();
+  const checkoutService = () => {
+    history.push(`/user/book/${_id}`);
+  };
+
   return (
-    <div className="service-card mb-4">
+    <div onClick={checkoutService} className="service-card mb-4">
       <div className="d-flex">
         <img
           className="img-fluid service-img"

@@ -1,4 +1,5 @@
-.admin {
+.admin,
+.user {
     min-height: 100vh;
     display: flex;
     padding-top: 5.7rem;

@@ -25,7 +25,9 @@ const Login = () => {
   };
 
   const adminCheck = (user) => {
-    fetch(`http://localhost:4060/adminCheck?email=${user.email}`)
+    fetch(
+      `https://mighty-tundra-68939.herokuapp.com/adminCheck?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((result) => {
         if (result) {
