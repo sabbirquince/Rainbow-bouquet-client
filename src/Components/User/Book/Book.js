@@ -18,7 +18,7 @@ const Book = () => {
   let { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:4060/getService?id=${id}`)
+    fetch(`https://mighty-tundra-68939.herokuapp.com/getService?id=${id}`)
       .then((res) => res.json())
       .then((data) => setLoadService(data[0]));
   }, [id]);

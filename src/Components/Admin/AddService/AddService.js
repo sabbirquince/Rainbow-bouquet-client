@@ -18,7 +18,7 @@ const AddService = () => {
     const allInfo = { ...data, imgUrl };
     console.log(allInfo);
 
-    fetch("http://localhost:4060/addService", {
+    fetch("https://mighty-tundra-68939.herokuapp.com/addService", {
       method: "POST",
       headers: {
         "content-type": "application/json",
