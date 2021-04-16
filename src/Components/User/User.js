@@ -47,6 +47,10 @@ const User = () => {
             <Book />
           </Route>
 
+          <Route path={`${path}/book`}>
+            <Book />
+          </Route>
+
           <Route path={`${path}/orders`}>
             <Orders />
           </Route>

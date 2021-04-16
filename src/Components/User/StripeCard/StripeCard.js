@@ -61,7 +61,7 @@ const StripeCard = ({ serviceInfo, setBooked }) => {
           },
         }}
       />
-      <button className="btn btn-warning mt-2" type="submit" disabled={!stripe}>
+      <button className="btn btn-warning mt-3" type="submit" disabled={!stripe}>
         Pay
       </button>
     </form>

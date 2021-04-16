@@ -11,9 +11,8 @@ import { LoginContext } from "../../../App";
 
 const Book = () => {
   const [loggedIn, setLoggedIn] = useContext(LoginContext);
-  const [toPay, setToPay] = useState(false);
   const [booked, setBooked] = useState(false);
-  const [loadService, setLoadService] = useState([]);
+  const [loadService, setLoadService] = useState("");
 
   let { id } = useParams();
 
@@ -34,44 +33,97 @@ const Book = () => {
   console.log(serviceInfo);
 
   const onSubmit = (data) => {
-    setServiceInfo(data);
+    const allBookInfo = { ...data, service: loadService.title };
+    setServiceInfo(allBookInfo);
   };
 
   return (
     <div className="book">
       <h3 className="admin-head">Add service</h3>
 
-      <form className="book-form" onSubmit={handleSubmit(onSubmit)}>
-        <input
-          className="form-control mb-2"
-          placeholder="name"
-          {...register("name", { required: true })}
-        />
-        {errors.name && (
-          <span className="text-warning py-1">This field is required</span>
+      <form className="book-form px-2" onSubmit={handleSubmit(onSubmit)}>
+        <div className="mb-3">
+          <label className="form-label">Your name</label>
+          <input
+            className="form-control"
+            placeholder="name"
+            value={loggedIn?.displayName}
+            {...register("name", { required: true })}
+          />
+          {errors.name && (
+            <span className="text-warning py-1">This field is required</span>
+          )}
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Your Email address</label>
+          <input
+            type="email"
+            placeholder="name@example.com"
+            value={loggedIn?.email}
+            className="form-control"
+            defaultValue={loggedIn?.email}
+            {...register("email")}
+          />
+        </div>
+
+        {loadService === "" ? (
+          <div className="mb-3">
+            <label className="form-label">Service</label>
+
+            <input
+              className="form-control"
+              type="text"
+              placeholder="select a service from homepage"
+              aria-label="select a service from homepage"
+              value={loadService?.title}
+              {...register("service", { required: true })}
+              readonly
+              disabled
+            />
+
+            {errors.service && (
+              <span className="text-warning py-1">
+                Please select a plan. <br /> If selected click submit again
+              </span>
+            )}
+          </div>
+        ) : (
+          <div className="mb-3">
+            <label className="form-label">Service</label>
+
+            <input
+              className="form-control"
+              type="text"
+              placeholder="select a service from homepage"
+              aria-label="select a service from homepage"
+              value={loadService?.title}
+              {...register("service", { required: true })}
+              readonly
+            />
+
+            {errors.service && (
+              <span className="text-warning py-1">
+                Please select a plan. <br /> If selected click submit again
+              </span>
+            )}
+          </div>
         )}
 
-        <input
-          type="email"
-          placeholder="name@example.com"
-          value={loggedIn?.email}
-          className="form-control mb-2"
-          defaultValue={loggedIn?.email}
-          {...register("email")}
-        />
+        <div className="mb-3">
+          <label className="form-label">Your address</label>
+          <input
+            type="text"
+            placeholder="Your address"
+            className="form-control"
+            {...register("address", { required: true })}
+          />
+        </div>
 
-        <input
-          type="text"
-          value={loadService?.title}
-          placeholder="service name"
-          className="form-control mb-2"
-          {...register("service", { required: true })}
-        />
-
-        {!serviceInfo && (
-          <p className="text-warning py-1">
-            please double click the button bellow to confirm. <br /> Otherwise
-            we might not get your booking.
+        {serviceInfo && (
+          <p className="text-warning pt-1">
+            Your booking is set to confirm. Please write payment <br />
+            information below to book successfully.
           </p>
         )}
 
@@ -82,12 +134,12 @@ const Book = () => {
         />
       </form>
 
-      <div className="payment">
+      <div className="payment px-2">
         <StripePayment setBooked={setBooked} serviceInfo={serviceInfo} />
       </div>
 
       {booked && (
-        <p className="text-warning p-5 text-center">
+        <p className="text-warning mb-5 text-center">
           Service is booked successfully. Be patient, we'll get back to you
           soon.
         </p>
