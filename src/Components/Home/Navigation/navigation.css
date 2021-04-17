@@ -1,10 +1,36 @@
 .my-nav {
     background-color: #181810;
-    padding: 1.5rem 11.15rem;
+    padding: 1.1rem 11.15rem;
+}
+
+.my-nav-c {
+    color: #e4dcad !important;
+}
+
+.my-nav-c:hover {
+    background-color: #0000004d;
+}
+
+.brand-box {
+    display: flex;
+}
+
+.brand-box span {
+    align-self: flex-end;
+    margin-left: 1rem;
+}
+
+.brand-img {
+    height: 2.5rem;
 }
 
 @media only screen and (max-width:990px) {
     .my-nav {
         padding: 1.15rem 2rem;
+    }
+
+    .my-nav-c {
+        color: #e4dcad !important;
+        background-color: #062121;
     }
 }

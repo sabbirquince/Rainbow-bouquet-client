@@ -2,10 +2,18 @@
     background-color: #181810;
     min-height: 11.8rem;
     box-shadow: 0 7px 12px rgba(0, 0, 0, .4);
+    transition: all .25s;
+}
+
+.pro-intro-card:hover {
+    background-color: #06212188;
+    transform: translateY(3.75px);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .4);
 }
 
 .pro-intro-img {
     min-height: 11.7rem;
+    object-fit: cover;
 }
 
 @media only screen and (max-width: 1400px) {

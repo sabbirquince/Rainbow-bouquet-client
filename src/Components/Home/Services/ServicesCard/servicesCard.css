@@ -2,9 +2,9 @@
     border: 1px solid #ffd56b;
     border-radius: 5px;
     padding: 2rem 2rem 1rem;
-    transition: all .15s;
     position: relative;
     cursor: pointer;
+    transition: all .3s;
 }
 
 .service-img {
@@ -16,16 +16,13 @@
     transition: all .10s;
 }
 
-.service-text:not(:last-child) {
+.service-text {
     border-bottom: 1px solid #ffd56bc7;
 }
 
 .service-card:hover {
-    background-color: #062121;
-}
-
-.service-card:hover .service-img {
-    transform: translateX(12rem);
+    background-color: #062121a2;
+    transform: translateY(-5px)
 }
 
 .service-head {
@@ -33,7 +30,7 @@
 }
 
 .service-head-sec {
-    transition: all .25s;
+    transition: all .5s cubic-bezier(.06, .71, .2, 1.49);
 }
 
 .service-card:hover .service-head-sec {
@@ -41,17 +38,24 @@
     font-weight: 700;
 }
 
-.service-card:hover .service-head {
-    transform: translateX(-10.25rem);
-}
-
-.service-card:hover .service-text:not(:last-child) {
+.service-card:hover .service-text {
     border-bottom: 1px solid transparent;
 }
 
 .service-card:hover .service-top {
     opacity: 0;
 }
+
+.service-price {
+    width: 20%;
+    transition: all .25s cubic-bezier(.06, .71, .2, 1.49) .15s;
+
+}
+
+.service-card:hover .service-price {
+    transform: translateX(8rem) translateY(-9rem) scale(1.5);
+}
+
 
 .service-bottom {
     position: absolute;
@@ -66,8 +70,8 @@
 
 .service-icon {
     font-size: 3.5rem;
-    transition: all .25s ease-out .25s;
     color: #181810;
+    transition: all .25s cubic-bezier(.06, .71, .2, 1.49) .15s;
 }
 
 .service-card:hover .service-icon {
@@ -75,7 +79,13 @@
     color: #ffd56bc7;
 }
 
-@media only screen and (max-width: 990px) {
+
+
+
+
+/*************************** MEDIA QUERIES ****************************/
+
+@media only screen and (max-width: 1200px) {
     .service-card:hover .service-img {
         transform: translateX(0);
     }
@@ -100,11 +110,15 @@
         transform: translateX(0);
     }
 
-    .service-card:hover .service-text:not(:last-child) {
+    .service-card:hover .service-text {
         border-bottom: 1px solid #ffd56bc7;
     }
 
     .service-head {
         padding-left: 4rem;
+    }
+
+    .service-card:hover .service-price {
+        transform: translateX(0) translateY(0) scale(1);
     }
 }

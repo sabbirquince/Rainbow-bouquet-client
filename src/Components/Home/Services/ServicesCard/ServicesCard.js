@@ -38,8 +38,8 @@ const ServicesCard = ({ service }) => {
         <p className="service-text">{description1}</p>
         <p className="service-text">{description2 || "..."}</p>
         <p className="service-text">{description3 || "..."}</p>
-        <h4>${price}</h4>
       </div>
+      <h4 className="service-price">${price}</h4>
 
       <div className="service-bottom">
         <FontAwesomeIcon className="service-icon" icon={faLongArrowAltRight} />

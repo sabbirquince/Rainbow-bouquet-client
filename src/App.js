@@ -12,6 +12,7 @@ import User from "./Components/User/User";
 import Admin from "./Components/Admin/Admin";
 import AdminRestricted from "./Components/Admin/AdminRestricted/AdminRestricted";
 import AdminRoute from "./Components/Admin/AdminRoute/AdminRoute";
+import ServicesPage from "./Components/ServicesPage/ServicesPage";
 
 export const LoginContext = createContext();
 
@@ -30,7 +31,9 @@ function App() {
               <Home />
             </Route>
 
-            <Route path="/users"></Route>
+            <Route path="/services">
+              <ServicesPage />
+            </Route>
 
             <Route exact path="/">
               <Home />

@@ -9,8 +9,8 @@ const Header = () => {
           Get Hold <br /> of Your <br /> Reminiscence
         </h1>
         <p className="px-3 px-sm-5">
-          Event photography management service just one click away. <br /> Let
-          us be your company to solidify your memories.
+          Event photography management service just one click <br /> away. Let
+          us walk alongside you to solidify your memories.
         </p>
 
         <button className="btn btn-warning px-4 ml-3 ml-sm-5">Book Now</button>
