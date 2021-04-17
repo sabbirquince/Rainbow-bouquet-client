@@ -47,16 +47,16 @@ const AdminRestricted = () => {
       <h3 className="mb-3">
         Warning: You have to be an admin to view this page!
       </h3>
-      <button
-        onClick={handleGoogleSignIn}
-        className="btn btn-outline-warning px-5"
-      >
-        Login
-      </button>
-      <p className="mt-3">
+      <p className="mt-1">
         You may not see afterwards yet after login if you are not enlisted as an
         admin of this website
       </p>
+      <button
+        onClick={handleGoogleSignIn}
+        className="btn btn-outline-warning px-5 py-3 mt-2"
+      >
+        Login
+      </button>
     </div>
   );
 };

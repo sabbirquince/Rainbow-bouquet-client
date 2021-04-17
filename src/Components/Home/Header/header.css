@@ -33,7 +33,7 @@
 
 @media only screen and (max-width: 776px) {
     .header {
-        min-height: 57.5vh;
+        min-height: 70vh;
     }
 
     .header h1 {
