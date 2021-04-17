@@ -2,18 +2,22 @@ import React from "react";
 import "./book.css";
 import { useForm } from "react-hook-form";
 import StripePayment from "../StripePayment/StripePayment";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import { useParams } from "react-router";
 import { useEffect } from "react";
 import { useContext } from "react";
 import { LoginContext } from "../../../App";
+import { Spinner } from "react-bootstrap";
 
 const Book = () => {
   const [loggedIn, setLoggedIn] = useContext(LoginContext);
+  const { email, displayName } = loggedIn;
+
+  const [spinner, setSpinner] = useState(false);
+
   const [booked, setBooked] = useState(false);
-  const [loadService, setLoadService] = useState("");
-  console.log(loadService);
+
+  const [loadService, setLoadService] = useState(null);
 
   let { id } = useParams();
 
@@ -26,7 +30,6 @@ const Book = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
@@ -34,11 +37,13 @@ const Book = () => {
 
   const onSubmit = (data) => {
     const allBookInfo = {
-      ...data,
-      service: loadService.title,
-      status: "Pending",
+      email,
+      displayName,
       imgUrl: loadService.imgUrl,
       price: loadService.price,
+      address: data.address,
+      service: loadService.title,
+      status: "Pending",
       description: {
         one: loadService.description1,
         two: loadService.description2,
@@ -77,24 +82,23 @@ const Book = () => {
           />
         </div>
 
-        {loadService === "" ? (
+        {!loadService ? (
           <div className="mb-3">
             <label className="form-label">Service</label>
 
             <input
               className="form-control"
               type="text"
-              placeholder="select a service from homepage"
-              aria-label="select a service from homepage"
+              placeholder="select a service from services page"
+              aria-label="select a service from services page"
               value={loadService?.title}
               {...register("service", { required: true })}
               readOnly
               disabled
             />
-
             {errors.service && (
               <span className="text-warning py-1">
-                Please select a plan. <br /> If selected click submit again
+                Please select a service from services page.
               </span>
             )}
           </div>
@@ -105,20 +109,31 @@ const Book = () => {
             <input
               className="form-control"
               type="text"
-              placeholder="select a service from homepage"
-              aria-label="select a service from homepage"
-              value={loadService?.title}
-              {...register("service", { required: true })}
+              placeholder="select a service from services page"
+              aria-label="select a service from services page"
+              value={loadService.title}
+              {...register("service")}
               readOnly
             />
-
             {errors.service && (
               <span className="text-warning py-1">
-                Please select a plan. <br /> If selected click submit again
+                Click 'submit to pay' again to proceed.
               </span>
             )}
           </div>
         )}
+
+        <div className="mb-3">
+          <label className="form-label">Price</label>
+          <input
+            type="text"
+            placeholder="Price"
+            className="form-control"
+            value={loadService?.price}
+            {...register("price")}
+            readOnly
+          />
+        </div>
 
         <div className="mb-3">
           <label className="form-label">Your address</label>
@@ -145,8 +160,18 @@ const Book = () => {
       </form>
 
       <div className="payment px-2">
-        <StripePayment setBooked={setBooked} serviceInfo={serviceInfo} />
+        <StripePayment
+          setBooked={setBooked}
+          setSpinner={setSpinner}
+          serviceInfo={serviceInfo}
+        />
       </div>
+
+      {spinner && !booked && (
+        <div className="text-center">
+          <Spinner animation="border" variant="warning" />
+        </div>
+      )}
 
       <div>
         {booked && (

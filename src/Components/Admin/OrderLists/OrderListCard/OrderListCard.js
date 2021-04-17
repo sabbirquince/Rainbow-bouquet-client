@@ -2,7 +2,7 @@ import React from "react";
 import "./orderListCard.css";
 
 const OrderListCard = ({ order, statChange, setStatChange }) => {
-  const { email, name, service, status, _id } = order;
+  const { email, displayName, service, status, _id } = order;
 
   const statusChange = (event, _id) => {
     const status = event.target.value;
@@ -21,7 +21,7 @@ const OrderListCard = ({ order, statChange, setStatChange }) => {
 
   return (
     <div className="ol-card">
-      <p>{name}</p>
+      <p>{displayName}</p>
       <p>{email}</p>
       <p>{service}</p>
       <p>Credit Card</p>

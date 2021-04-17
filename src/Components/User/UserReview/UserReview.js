@@ -29,7 +29,7 @@ const UserReview = () => {
 
   return (
     <div>
-      <h3 className="admin-head">Your orders</h3>
+      <h3 className="admin-head">Review us</h3>
 
       <form className="p-2 user-review-form" onSubmit={handleSubmit(onSubmit)}>
         <div className="mb-3">

@@ -1,11 +1,12 @@
 import React from "react";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
-const StripeCard = ({ serviceInfo, setBooked }) => {
+const StripeCard = ({ serviceInfo, setBooked, setSpinner }) => {
   const stripe = useStripe();
   const elements = useElements();
 
   const handleSubmit = async (event) => {
+    setSpinner(true);
     event.preventDefault();
 
     if (!stripe || !elements) {
@@ -36,6 +37,7 @@ const StripeCard = ({ serviceInfo, setBooked }) => {
         .then((res) => res.json())
         .then((result) => {
           setBooked(result);
+          setSpinner(false);
           setTimeout(() => {
             setBooked(false);
           }, 10000);

@@ -22,6 +22,12 @@ const Orders = () => {
     <div>
       <h3 className="admin-head">Your orders</h3>
 
+      {!myOrders.length && (
+        <p className="text-warning text-center py-3">
+          You haven't ordered anything. Go to services page to order.
+        </p>
+      )}
+
       <div className="user-orders row pt-3">
         {myOrders.map((each) => (
           <div className="col-lg-4">
