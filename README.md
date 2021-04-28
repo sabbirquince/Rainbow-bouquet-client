@@ -1,8 +1,6 @@
-## Live: https://rainbow-bouquet.web.app/
-
 ## Project name: Rainbow Bouquet
 
-### This is about a event photography management service company. Who takes bookings and serve accordingly.
+### This is about an event photography management service company. Who takes bookings and serve accordingly.
 
 ### Features:-
 
@@ -15,3 +13,5 @@
 #### 4. Admins(if) can see all the bookings/orders of all customers, see all services and delete a service if needed.
 
 #### 5. Admins are restricted, only if that person(email) is enlisted as an admin in database can go and modify admin things
+
+### Live: https://rainbow-bouquet.web.app/
