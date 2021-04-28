@@ -1,6 +1,6 @@
 ## Project name: Rainbow Bouquet
 
-### This is about an event photography management service company. Who takes bookings and serve accordingly.
+### A MERN stack project about an event photography management service company. Who takes bookings and serve accordingly.
 
 ### Features:-
 
